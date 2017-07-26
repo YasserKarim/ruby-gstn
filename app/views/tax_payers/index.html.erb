@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tax Payers</h1>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Gstin</th>
+      <th>Password</th>
+      <th>App key</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tax_payers.each do |tax_payer| %>
+      <tr>
+        <td><%= link_to tax_payer.username, tax_payer %></td>        
+        <td><%= tax_payer.gstin %></td>
+        <td><%= tax_payer.password %></td>
+        <td><%= tax_payer.app_key %></td>
+        <td><%= link_to 'Edit', edit_tax_payer_path(tax_payer) %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tax Payer', new_tax_payer_path %>

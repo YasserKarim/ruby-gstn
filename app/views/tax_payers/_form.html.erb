@@ -1,0 +1,37 @@
+<%= form_with(model: tax_payer, local: true) do |form| %>
+  <% if tax_payer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tax_payer.errors.count, "error") %> prohibited this tax_payer from being saved:</h2>
+
+      <ul>
+      <% tax_payer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :tax_payer_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gstin %>
+    <%= form.text_field :gstin, id: :tax_payer_gstin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :tax_payer_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :app_key %>
+    <%= form.text_area :app_key, id: :tax_payer_app_key %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

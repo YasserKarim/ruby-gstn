@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<small><%= link_to 'Back', tax_payers_path %> </small>
+<br>
+<table class='table'>
+  <tr>
+    <td><strong>Username:</strong></td>
+    <td><%= @tax_payer.username %></td>
+    <td><strong>GSTIN:</strong></td>
+    <td><%= @tax_payer.gstin %></td>
+  </tr>
+  <tr>
+    <td><strong>Last Used App Key</strong></td>
+    <td colspan='3'><%= @tax_payer.app_key %></td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Edit', edit_tax_payer_path(@tax_payer) %></td>
+    <td><%= link_to 'Generate OTP', tax_payer_request_otp_path(@tax_payer) %></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>

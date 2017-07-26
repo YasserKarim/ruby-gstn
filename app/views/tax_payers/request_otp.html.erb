@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<small><%= link_to 'Back', tax_payers_path %> </small>
+
+<h2> Request OTP </h2>
+<br>
+<table class='table'>
+  <tr>
+    <td><strong>Username:</strong></td>
+    <td><%= @tax_payer.username %></td>
+    <td><strong>GSTIN:</strong></td>
+    <td><%= @tax_payer.gstin %></td>
+  </tr>
+  <tr>
+    <td><strong>Last Used App Key</strong></td>
+    <td colspan='3' class='code-text'><%= @tax_payer.app_key %></td>
+  </tr>
+  <tr>
+    <td><%= link_to 'Edit', edit_tax_payer_path(@tax_payer) %></td>
+    <td><%= link_to 'Generate OTP', tax_payer_request_otp_path(@tax_payer) %></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>The AES key</td>
+    <td colspan='3'><%= @app_key %></td>    
+  </tr>
+  <tr>
+    <td>The Public Key</td>
+    <td colspan='3'><%= @public_key %></td>    
+  </tr>
+  <tr>
+    <td>Encrypted Key</td>
+    <td colspan='3'><%= @encrypted_key %></td>    
+  </tr>
+  <tr>
+    <td>Response</td>
+    <td colspan='3'><%= @response_text %></td>    
+  </tr>
+</table>

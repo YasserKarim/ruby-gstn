@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gstn</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='row'>
+      <div class='container'>
+        <div class='col-sm-8 offset-sm-2'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
