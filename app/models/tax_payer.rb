@@ -1,6 +1,7 @@
 class TaxPayer < ApplicationRecord
   include HTTParty
-  debug_output $stdout
+  debug_output Rails.logger
+  logger  ::Logger.new(STDERR)
   base_uri "http://devapi.gstsystem.co.in/taxpayerapi/v0.2"
 
   def generate_encoded_aes_256_bit_key
