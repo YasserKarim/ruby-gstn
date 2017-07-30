@@ -14,10 +14,8 @@ class TaxPayer < ApplicationRecord
 
   def extract_public_key_from_certificate
 
-    #certificate_file_content = File.read("#{Rails.root}/lib/certificates/GSTN_G2A_SANDBOX_UAT_public.cer")
-    certificate_file_content = File.read("#{Rails.root}/lib/certificates/GSTN_public.cer")
-    cert = OpenSSL::X509::Certificate.new(certificate_file_content)
-    File.open("converted.pem", "wb") { |f| f.print cert.to_pem }
+    certificate_file_content = File.read("#{Rails.root}/lib/certificates/GSTN_G2B_SANDBOX_UAT_public.cer")
+    cert = OpenSSL::X509::Certificate.new(certificate_file_content)    
     cert.public_key
 
   end

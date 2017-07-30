@@ -77,7 +77,6 @@ class TaxPayersController < ApplicationController
     #4. Send an OTPREQUEST to GSTN portal
     @response_text = @tax_payer.generate_otp_request(@encrypted_key).parsed_response
 
-    
     respond_to do |format|
       format.html {}
     end
