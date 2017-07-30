@@ -1,6 +1,7 @@
 class TaxPayer < ApplicationRecord
   include HTTParty
   debug_output $stdout
+  base_uri "http://devapi.gstsystem.co.in/taxpayerapi/v0.2"
 
   def generate_encoded_aes_256_bit_key
 
@@ -22,7 +23,7 @@ class TaxPayer < ApplicationRecord
 
   def generate_otp_request(encrypted_key)
     
-    gstn_server_response = self.class.post('http://devapi.gstsystem.co.in/taxpayerapi/v0.2/authenticate', 
+    gstn_server_response = self.class.post('/authenticate', 
       :headers => {
         :clientid => 'l7xx6b008ac621824f79805cca0b205fa7fc', #Rails.application.secrets.gstn_client_id, 
         :'client-secret' => '27bef27a0d5046b4b1b1613279713cbe', #Rails.application.secrets.gstn_client_secret, 
