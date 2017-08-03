@@ -1,7 +1,9 @@
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+
 Please note that GSTN_G2A_SANDBOX_UAT_public.cer is a DER encoded certificate
 As found through this 
 openssl x509 -in certificate.der -inform der -text -noout
-
 
 
 -----BEGIN PUBLIC KEY----- 
@@ -38,3 +40,17 @@ https://stackoverflow.com/questions/30475758/use-openssl-rsa-key-with-net
 https://stackoverflow.com/questions/4635837/invalid-public-keys-when-using-the-ruby-openssl-library
 http://www.gtopia.org/blog/2010/02/der-vs-crt-vs-cer-vs-pem-certificates/
 https://stackoverflow.com/questions/26259432/how-to-check-a-public-rsa-key-file/26260514#26260514
+
+
+
+https://stackoverflow.com/questions/37384701/yodlee-api-pki-trying-to-encrypt-data-rsa-ecb-pkcs1padding-using-rails-ruby
+This guy says that final key should be Hex Encoded
+
+
+https://stackoverflow.com/questions/1303220/padding-error-when-using-rsa-encryption-in-c-sharp-and-decryption-in-java?rq=1
+
+A node.js implementation of the TSL standard
+https://github.com/digitalbazaar/forge
+
+Problem
+The data that we are encrypting using public key, when its sent to GSTN, they give me an error 

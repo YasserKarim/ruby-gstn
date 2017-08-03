@@ -69,7 +69,8 @@ class TaxPayersController < ApplicationController
     @app_key = @tax_payer.generate_encoded_aes_256_bit_key
 
     #2. Load the public key
-    @public_key = @tax_payer.extract_public_key_from_certificate
+    #@public_key = @tax_payer.extract_public_key_from_certificate
+    @public_key = @tax_payer.convert_public_key_to_old_ruby_pkcs1_format
 
     #3. Encrypt @app_key using Public Key
     @encrypted_key = Base64.encode64(@public_key.public_encrypt(@app_key))
