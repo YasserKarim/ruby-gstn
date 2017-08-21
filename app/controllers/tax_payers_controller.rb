@@ -70,11 +70,9 @@ class TaxPayersController < ApplicationController
 
     #2. Load the public key
     @public_key = @tax_payer.extract_public_key_from_certificate
-    #@public_key = @tax_payer.convert_public_key_to_old_ruby_pkcs1_format
-    #@public_key = @tax_payer.new_rsa_key
-    #@public_key = @tax_payer.read_from_rsa_file
 
     #3. Encrypt @app_key using Public Key
+    # The error that I was continuosly facing was that I was not decoding the app_key. It must be first decoded and only then should be used
     @encrypted_key = Base64.encode64(@public_key.public_encrypt(Base64.decode64(@app_key)))
 
     #4. Send an OTPREQUEST to GSTN portal

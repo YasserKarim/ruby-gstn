@@ -16,7 +16,8 @@ class TaxPayer < ApplicationRecord
   def extract_public_key_from_certificate
 
     certificate_file_content = File.read("#{Rails.root}/lib/certificates/GSTN_G2B_SANDBOX_UAT_public.cer")
-    #cert = OpenSSL::X509::Certificate.new(Base64.decode64(certificate_file_content))
+    #cert = OpenSSL::X509::Certificate.new(Base64.decode64(certificate_file_content)) <- Big Error
+    # The error I was facing was decoding the certificate file
     cert = OpenSSL::X509::Certificate.new(certificate_file_content)
     cert.public_key
 
