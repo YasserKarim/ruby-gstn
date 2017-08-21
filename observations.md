@@ -40,6 +40,7 @@ https://stackoverflow.com/questions/30475758/use-openssl-rsa-key-with-net
 https://stackoverflow.com/questions/4635837/invalid-public-keys-when-using-the-ruby-openssl-library
 http://www.gtopia.org/blog/2010/02/der-vs-crt-vs-cer-vs-pem-certificates/
 https://stackoverflow.com/questions/26259432/how-to-check-a-public-rsa-key-file/26260514#26260514
+https://github.com/racker/ruby-1.9.3-lucid/blob/master/test/openssl/test_pkey_rsa.rb#L82
 
 
 
